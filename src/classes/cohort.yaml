@@ -58,6 +58,7 @@ classes:
       
   
   CohortSession:
+    is_a: GUTSThing
     class_uri:
     description: >-
       A specific session of a specific cohort of the GUTS study
