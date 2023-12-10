@@ -1,0 +1,29 @@
+---
+id: https://w3id.org/guts/thing
+name: cohort-schema
+title: GUTS Thing Schema
+description: |-
+  A schema to describe a GUTS "thing"
+license: MIT
+version: 0.0.1
+
+prefixes:
+  guts: https://w3id.org/guts/
+  schema: http://schema.org/
+default_prefix: guts
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+  GUTSThing:
+    class_uri: schema:Thing
+    description: >-
+      Any "thing" in the GUTS context
+    attributes:
+      objtype:
+        designates_type: true
+        description: >-
+          The type designator for a GUTS "thing"
+        range: string

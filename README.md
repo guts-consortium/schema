@@ -1,1 +1,1 @@
-# schema
+# GUTS schema

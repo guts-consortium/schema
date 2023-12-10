@@ -1,0 +1,97 @@
+---
+id: https://w3id.org/guts/cohort
+name: cohort-schema
+title: GUTS Cohort Schema
+description: |-
+  A schema to describe GUTS cohorts
+license: MIT
+version: 0.0.1
+
+prefixes:
+  guts: https://w3id.org/guts/
+  schema: http://schema.org/
+default_prefix: guts
+default_range: string
+
+imports:
+  - linkml:types
+  - classes/guts_thing
+
+classes:
+  Cohort:
+    is_a: GUTSThing
+    class_uri: schema:CohortStudy
+    description: >-
+      A cohort of the GUTS study
+    attributes:
+      identifier:
+        slot_uri: schema:identifier
+        identifier: true
+        required: true
+        description: >-
+          A name that identifies the cohort uniquely
+          within the GUTS study
+        range: CohortIdentifier
+      sessions:
+        required: false
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          All sessions of a specific cohort
+        range: CohortSession
+      participants:
+        required: false
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          A name that identifies the cohort uniquely
+          within the GUTS study
+        range: Participant
+      participant_measures:
+        required: false
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          All measures collected from all participants
+          during all sessions of a specific cohort
+        range: ParticipantMeasure
+      
+  
+  CohortSession:
+    class_uri:
+    description: >-
+      A specific session of a specific cohort of the GUTS study
+    attributes:
+      identifier:
+        slot_uri: schema:identifier
+        identifier: true
+        required: true
+        description: >-
+          A name that identifies the cohort uniquely
+          within the GUTS study
+        range: CohortIdentifier
+      participants:
+        identifier: true
+        required: true
+        description: >-
+          A name that identifies the cohort uniquely
+          within the GUTS study
+        range: CohortIdentifier
+        multivalued: true
+        inlined_as_list: true
+      participant_measures:
+        multivalued: true
+        inlined_as_list: true
+
+
+enums:
+  CohortIdentifier:
+    permissible_values:
+      SOCIAL:
+        # meaning: Social learning
+      SCHOOL:
+        # meaning: Learning in School Context
+      GAINS:
+        # meaning: Vicarious gains and social connection
+      EMPATHY:
+        # meaning: Empathy

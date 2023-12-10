@@ -1,0 +1,172 @@
+---
+id: https://w3id.org/guts/measure
+name: measure-schema
+title: GUTS Measure Schema
+description: |-
+  A schema to describe a GUTS measure
+license: MIT
+version: 0.0.1
+
+prefixes:
+  guts: https://w3id.org/guts/
+  schema: http://schema.org/
+default_prefix: guts
+default_range: string
+
+imports:
+  - linkml:types
+  - classes/cohort
+  - classes/guts_thing
+
+classes:
+  Measure:
+    is_a: GUTSThing
+    class_uri:
+    description: >-
+      A type of data sample in the GUTS study
+    attributes:
+      short_name:
+        slot_uri: schema:identifier
+        identifier: true
+        required: true
+        description: >-
+          An short code identifier for the measure that is
+          unique within the GUTS context
+        range: ShortName
+      long_name:
+        slot_uri: schema:title
+        required: true
+        description: >-
+          A longer name or title for the measure
+      description:
+        slot_uri: schema:description
+        required: false
+        description: >-
+          A description for the measure
+      type:
+        required: false
+        description: >-
+          A data type for the measure
+        range: DataType
+      category:
+        required: false
+        description: >-
+          A data category for the measure
+        range: DataCategory
+
+enums:
+  ShortName:
+    permissible_values:
+      hexaco:
+      iri:
+      ai:
+      srq-p:
+      srq-a:
+      bisbas:
+      soep:
+      shaps:
+      prt:
+      bscs:
+      demographics-1:
+      demographics-2:
+      demographics-3:
+      pds:
+      ace:
+      ctq:
+      pss:
+      cope-sf:
+      hsbc:
+      fmps:
+      health:
+      phq-9:
+      demographics-4:
+      nvs:
+      ius:
+      inequality:
+      scared:
+      qcae:
+      nri-wco:
+      pcs-ysr:
+      pops:
+      p-knowledge:
+      o2s3:
+      media:
+      cius:
+      sdq:
+      yqol-sf:
+      mwys:
+      education:
+      opbs-e:
+      ces:
+      soc-act:
+      intrust:
+      ethnocentrism:
+      politics:
+      ypt-s:
+      softdrugs:
+      harddrugs:
+      bpm:
+      audit:
+      fmri-sddt:
+      sddt:
+      fmri-reward:
+      reward:
+      fmri-trust-modified:
+      trust-modified:
+      fmri-rest:
+      smri:
+      eeg-social-reward:
+      social-reward:
+      eeg-social-flanker:
+      social-flanker:
+      eeg-gonogo:
+      gonogo:
+      eeg-rest:
+      prosocial-effort:
+      trust:
+      hair-testo:
+      hair-dheas:
+      hair-oxt:
+      hair-cort:
+      hair-e2:
+      saliva-testo:
+      saliva-dheas:
+      saliva-oxt:
+      saliva-cort:
+      saliva-e2:
+      dna:
+      esm-whereabouts:
+      esm-mood:
+      esm-regulation:
+      esm-sddt:
+      esm-stressor:
+      esm-self-esteem:
+      esm-pressure:
+      esm-relationships:
+      ecg:
+      hrv:
+  DataType:
+    permissible_values:
+      behavioral:
+      ecg:
+      eeg:
+      fmri:
+      hair-sample:
+      mri:
+      questionnaire:
+      questionnaire-diary:
+      saliva-sample:
+  DataCategory:
+    permissible_values:
+      antisocial:
+      background:
+      individual-outcome:
+      parenting:
+      prosocial-behavior:
+      self-regulation:
+      social-media:
+
+
+
+
+      

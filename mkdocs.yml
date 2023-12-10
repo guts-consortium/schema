@@ -1,0 +1,11 @@
+copyright:
+site_name: GUTS Schema
+site_url: https://guts-consortium.github.io/schema
+nav:
+  - Home: index.md
+  - About: about.md
+theme:
+  name: gitbook
+  locale: en
+plugins:
+  - mermaid2

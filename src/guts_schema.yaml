@@ -1,0 +1,40 @@
+---
+id: https://w3id.org/guts/guts
+name: guts-schema
+title: GUTS Schema
+description: |-
+  A schema to describe GUTS data
+license: MIT
+version: 0.0.1
+
+prefixes:
+  guts: https://w3id.org/guts/
+default_prefix: guts
+default_range: string
+
+imports:
+  - classes/guts_thing
+  - classes/cohort
+  - classes/participant
+  - classes/participant_measure
+  - classes/measure
+
+classes:
+  GutsGraph:
+    tree_root: true
+    description:
+      A container for nodes in a GUTS graph
+    attributes:
+      graph:
+        description: >-
+          GUTS graph nodes
+        multivalued: true
+        inlined_as_list: true
+        any_of:
+          - range: Cohort
+          - range: CohortSession
+          - range: Measure
+          - range: ParticipantMeasure
+          - range: Participant
+        aliases:
+          - "@graph"

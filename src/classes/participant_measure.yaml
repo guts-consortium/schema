@@ -1,0 +1,62 @@
+---
+id: https://w3id.org/guts/participant_measure
+name: participant--measureschema
+title: GUTS Participant Measure Schema
+description: |-
+  A schema to describe GUTS participant-measures
+license: MIT
+version: 0.0.1
+
+prefixes:
+  guts: https://w3id.org/guts/
+  schema: http://schema.org/
+default_prefix: guts
+default_range: string
+
+imports:
+  - linkml:types
+  - classes/guts_thing
+  - classes/cohort
+  - classes/participant
+  - classes/participant_measure
+  - classes/measure
+
+
+classes:
+  ParticipantMeasure:
+    is_a: GUTSThing
+    class_uri:
+    description: >-
+      A data sample of a specific type from a specific participant
+    attributes:
+      participant:
+        required: true
+        description: >-
+          The participant from whom the data sample was collected
+        range: Participant
+      age_in_years:
+        required: true
+        description: >-
+          The age (in years) of the participant when the data
+          sample was collected
+        range: integer
+        # minimum_value:
+        # maximum_value: 
+      measure:
+        required: true
+        description: >-
+          The specific measure that was collected
+        range: Measure
+      session:
+        required: true
+        description: >-
+          The session (of a specific cohort) during which the
+          data sample was collected
+        range: CohortSession
+      cohort:
+        required: true
+        description: >-
+          The specific cohort as part of which the data
+          sample was collected
+        range: Cohort
+

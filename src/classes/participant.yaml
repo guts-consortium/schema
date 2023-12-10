@@ -1,0 +1,46 @@
+---
+id: https://w3id.org/guts/participant
+name: participant-schema
+title: GUTS Participant Schema
+description: |-
+  A schema to describe GUTS participants
+license: MIT
+version: 0.0.1
+
+prefixes:
+  guts: https://w3id.org/guts/
+  schema: http://schema.org/
+default_prefix: guts
+default_range: string
+
+imports:
+  - linkml:types
+  - classes/guts_thing
+  - classes/cohort
+  - classes/participant_measure
+
+
+classes:
+  Participant:
+    is_a: GUTSThing
+    class_uri: schema:Person
+    description: >-
+      A participant in any cohort of the GUTS study
+    attributes:
+      code:
+        slot_uri: schema:identifier
+        identifier: true
+        required: true
+        description: >-
+          An identifier for the participant that is unique within
+          the GUTS context, i.e. across cohorts
+      cohort:
+        required: true
+        description: >-
+          The cohort that the participant forms part of
+        range: Cohort
+      measures:
+        required: false
+        description: >-
+          All measures collected for this specific participant
+        range: ParticipantMeasure
