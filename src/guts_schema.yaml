@@ -1,5 +1,5 @@
 ---
-id: https://w3id.org/guts/guts
+id: https://guts-consortium.github.io/schema/guts
 name: guts-schema
 title: GUTS Schema
 description: |-
@@ -8,7 +8,7 @@ license: MIT
 version: 0.0.1
 
 prefixes:
-  guts: https://w3id.org/guts/
+  guts: https://guts-consortium.github.io/schema/
 default_prefix: guts
 default_range: string
 

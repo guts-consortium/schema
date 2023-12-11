@@ -1,5 +1,5 @@
 ---
-id: https://w3id.org/guts/measure
+id: https://guts-consortium.github.io/schema/measure
 name: measure-schema
 title: GUTS Measure Schema
 description: |-
@@ -8,7 +8,7 @@ license: MIT
 version: 0.0.1
 
 prefixes:
-  guts: https://w3id.org/guts/
+  guts: https://guts-consortium.github.io/schema/
   schema: http://schema.org/
 default_prefix: guts
 default_range: string
